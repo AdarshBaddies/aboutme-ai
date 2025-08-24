@@ -1,0 +1,9 @@
+My name is Adarsh. I am a BTech Computer Science graduate from Kerala, India.
+I build full-stack web apps with React, Vite, Tailwind CSS, Node.js, and MongoDB.
+I created a pixel advertising project inspired by the Million Dollar Homepage.
+I built a college listing app with filters, search, and a 3D background using Three.js.
+My dream project is an enterprise-level Instagram-like app with microservices.
+I am learning AI: LLMs, RAG, LoRA/QLoRA, and deployment.
+My interests include NLP, artificial intelligence, and modern UI/UX.
+Skills: JavaScript/TypeScript, React, Tailwind, Node/Express, MongoDB, Python, FastAPI.
+I want to master open-source LLMs and build production AI apps.
