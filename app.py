@@ -4,6 +4,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 from utils import Retriever
 from pathlib import Path
+import uvicorn
+import gradio as gr
 
 
 SYSTEM = (
@@ -63,3 +65,29 @@ def chat(payload: ChatIn):
     )
     answer = tokenizer.decode(out[0], skip_special_tokens=True)
     return ChatOut(answer=answer, context=context_lines)
+
+
+# ✅ Gradio frontend (calls the same backend logic directly)
+def gradio_chat(question):
+    payload = ChatIn(question=question)
+    result = chat(payload)
+    return result.answer, "\n".join(result.context)
+
+
+demo = gr.Interface(
+    fn=gradio_chat,
+    inputs=gr.Textbox(label="Ask Adarsh's AI twin"),
+    outputs=[gr.Textbox(label="Answer"), gr.Textbox(label="Context")],
+    title="Adarsh's RAG Chatbot"
+)
+
+
+if __name__ == "__main__":
+    # Run FastAPI + Gradio separately
+    import threading
+
+    def run_api():
+        uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=False)
+
+    threading.Thread(target=run_api, daemon=True).start()
+    demo.launch(server_name="0.0.0.0", server_port=7860)
