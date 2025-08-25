@@ -24,4 +24,4 @@ jobs:
           cd hf-space
           git add .
           git commit -m "Update from GitHub" || echo "No changes"
-          git push https://USERNAME:$HF_TOKEN@huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE main
+          git push https://USERNAME:$HF_TOKEN@huggingface.co/spaces/adarshbaddies/aboutme-ai main
