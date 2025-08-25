@@ -26,7 +26,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model = model.to(device)
 
 
-a pp = FastAPI(title="Free RAG Chatbot")
+app = FastAPI(title="Free RAG Chatbot")
 
 
 class ChatIn(BaseModel):
