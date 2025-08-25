@@ -1,3 +1,16 @@
+---
+title: My Chatbot   # any name
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: gradio         # or streamlit/docker
+sdk_version: "4.0.0"  # optional, HF will choose latest if missing
+app_file: app.py     # the Python file that launches Gradio
+pinned: false
+---
+
+
+
 # Free RAG Chatbot (FastAPI on Hugging Face Spaces)
 
 
