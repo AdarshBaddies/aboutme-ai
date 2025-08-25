@@ -13,7 +13,7 @@ jobs:
       - name: Setup Git
         run: |
           git config --global user.email "adarshnothing578@gmail.com"
-          git config --global user.name "Adarsh B"
+          git config --global user.name "adarshbaddies"
 
       - name: Push to HF Space
         env:
